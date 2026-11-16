@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bispo Marcelo | Estudo Bíblico</title>
+<style>
+:root{--bg:#101112;--panel:#1a1c1e;--panel2:#222528;--line:#34383b;--gold:#c7a45b;--gold2:#e2c47e;--text:#f4f1e9;--muted:#a9a69f;--green:#718b72}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}
+aside{background:#151719;border-right:1px solid var(--line);padding:26px 16px;display:flex;flex-direction:column;gap:24px}
+.brand{padding:4px 10px}.brand-mark{color:var(--gold);font-size:24px}.brand h1{font-size:18px;letter-spacing:2px;margin:4px 0}.brand small{color:var(--muted);letter-spacing:1.5px;font-size:10px}
+nav{display:grid;gap:7px}.nav{border:0;background:transparent;color:var(--muted);text-align:left;padding:12px 14px;border-radius:10px;display:flex;gap:12px;align-items:center}.nav.active,.nav:hover{background:#29251d;color:var(--gold2)}.nav b{font-weight:500}
+.side-note{margin-top:auto;border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--muted);font-size:12px}
+main{padding:34px clamp(18px,4vw,58px);max-width:1400px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase}.top h2{font-size:28px;margin:5px 0 0}.status{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 11px;border-radius:20px}
+.hero{background:linear-gradient(120deg,#28251e,#1b1d1e 65%);border:1px solid #4a4030;border-radius:18px;padding:25px;margin-bottom:24px}.hero h3{font-size:23px;margin:5px 0}.hero p{color:var(--muted);margin:4px 0 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px}.card h3{margin:0 0 12px;font-size:17px}.muted{color:var(--muted)}.gold{color:var(--gold2)}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:12px;color:var(--muted)}input,textarea,select{width:100%;background:#111315;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:11px 12px;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--gold)}textarea{min-height:120px;resize:vertical}
+.btn{background:var(--gold);color:#171717;border:0;border-radius:9px;padding:10px 15px;font-weight:650}.btn.secondary{background:#2b2e30;color:var(--text);border:1px solid var(--line)}.btn.danger{background:#482b2b;color:#ffdada}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.row{display:flex;gap:10px;align-items:center}.row>*{flex:1}.list{display:grid;gap:9px}.item{background:var(--panel2);padding:12px;border-radius:10px;display:flex;justify-content:space-between;gap:10px;align-items:center}.item small{display:block;color:var(--muted)}
+.scripture{font-family:Georgia,serif;font-size:19px;line-height:1.8;color:#f0e8d8}.verse-num{color:var(--gold);font-size:12px;vertical-align:super;margin-right:5px}
+.hidden{display:none!important}.empty{padding:25px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
+.output{white-space:pre-wrap;background:#111315;border:1px solid var(--line);padding:18px;border-radius:12px;margin-top:14px}
+footer{color:#777;font-size:11px;margin-top:28px}
+@media(max-width:760px){.app{display:block}aside{position:sticky;top:0;z-index:5;padding:10px;border-right:0;border-bottom:1px solid var(--line)}.brand{display:none}nav{display:flex;overflow:auto;gap:4px}.nav{white-space:nowrap;padding:9px 11px;font-size:12px}.side-note{display:none}main{padding:22px 14px}.grid{grid-template-columns:1fr}.top h2{font-size:23px}}
+</style></head>
+<body><div class="app">
+<aside><div class="brand"><div class="brand-mark">✦</div><h1>BISPO MARCELO</h1><small>ESTUDO E CONHECIMENTO BÍBLICO</small></div>
+<nav>
+<button class="nav active" data-tab="inicio">⌂ <b>Início</b></button>
+<button class="nav" data-tab="biblia">▤ <b>Bíblia</b></button>
+<button class="nav" data-tab="anotacoes">✎ <b>Anotações</b></button>
+<button class="nav" data-tab="esbocos">☷ <b>Esboços</b></button>
+<button class="nav" data-tab="pesquisa">⌕ <b>Pesquisa</b></button>
+<button class="nav" data-tab="biblioteca">▣ <b>Biblioteca</b></button>
+</nav><div class="side-note">“Lâmpada para os meus pés é tua palavra e luz para o meu caminho.”<br><span class="gold">Salmos 119:105</span></div></aside>
+<main><div class="top"><div><div class="eyebrow">Seu espaço de estudo</div><h2 id="pageTitle">Bem-vindo ao Bispo Marcelo</h2></div><div class="status">● Biblioteca local • IA no servidor</div></div>
+<section id="inicio" class="page">
+<div class="hero"><div class="eyebrow">Bíblia • estudo • preparação</div><h3>Conheça as Escrituras com profundidade.</h3><p>Leia, registre suas descobertas, prepare mensagens e organize seus estudos em um só lugar.</p></div>
+<div class="grid">
+<div class="card"><div class="gold">▤ Bíblia</div><h3>Continue sua leitura</h3><p class="muted">Abra a Bíblia e navegue por livros, capítulos e passagens.</p><button class="btn" onclick="showTab('biblia')">Abrir Bíblia</button></div>
+<div class="card"><div class="gold">☷ Preparação</div><h3>Prepare uma mensagem</h3><p class="muted">Defina tema, texto, estilo e duração para estruturar seu esboço.</p><button class="btn" onclick="showTab('esbocos')">Criar esboço</button></div>
+<div class="card"><div class="gold">⌕ Pesquisa</div><h3>Investigue um versículo</h3><p class="muted">Comece uma pesquisa bíblica por referência.</p><button class="btn secondary" onclick="showTab('pesquisa')">Pesquisar</button></div>
+<div class="card"><div class="gold">✎ Registro pessoal</div><h3>Suas anotações</h3><p class="muted">Registre livremente pensamentos e aprendizados. Sem IA.</p><button class="btn secondary" onclick="showTab('anotacoes')">Anotar</button></div></div></section>
+
+<section id="biblia" class="page hidden"><div class="hero"><div class="eyebrow">Leitura das Escrituras</div><h3>Bíblia Sagrada</h3><p>Selecione o livro e a passagem para abrir o texto bíblico.</p></div>
+<div class="card"><div class="row"><div class="field"><label>Livro</label><select id="book"><option>João</option><option>Gênesis</option><option>Salmos</option><option>Mateus</option><option>Romanos</option><option>Isaías</option><option>Atos</option><option>Apocalipse</option></select></div><div class="field"><label>Capítulo</label><input id="chapter" type="number" min="1" value="1"></div><div class="field"><label>Versículo (opcional)</label><input id="verse" type="number" min="1" placeholder="Ex.: 3"></div></div><div class="actions"><button class="btn" onclick="openPassage()">Abrir passagem</button></div><div id="passage" class="output"><p class="muted">A Bíblia integral ainda precisa ser conectada a uma fonte de texto bíblico licenciada. Esta versão inicial demonstra a navegação e inclui uma passagem de exemplo.</p></div></div></section>
+
+<section id="anotacoes" class="page hidden"><div class="hero"><div class="eyebrow">Caderno pessoal</div><h3>Anotações</h3><p>Escreva sem interferência de inteligência artificial. Suas anotações ficam salvas neste navegador.</p></div>
+<div class="card"><input id="noteId" type="hidden"><div class="field"><label>Título</label><input id="noteTitle" placeholder="Ex.: A soberania de Deus"></div><div class="field"><label>Referência bíblica (opcional)</label><input id="noteRef" placeholder="Ex.: Romanos 8:28"></div><div class="field"><label>Sua anotação</label><textarea id="noteBody" placeholder="Escreva suas observações, ideias e estudos..."></textarea></div><div class="actions"><button class="btn" onclick="saveNote()">Salvar anotação</button><button class="btn secondary" onclick="clearNote()">Limpar</button></div></div><div class="card" style="margin-top:16px"><h3>Anotações salvas</h3><div id="notesList" class="list"></div></div></section>
+
+<section id="esbocos" class="page hidden"><div class="hero"><div class="eyebrow">Preparação de mensagens</div><h3>Gerador de esboços</h3><p>Digite qualquer tema bíblico e gere um esboço completo com IA real. É necessária uma chave de API configurada no servidor.</p></div>
+<div class="card"><div class="field"><label>Tema ou título</label><input id="outlineTopic" placeholder="Ex.: Jesus cura o paralítico"></div><div class="row"><div class="field"><label>Estilo</label><select id="outlineType"><option>Evangelístico</option><option>Expositivo</option><option>Textual</option><option>Temático</option><option>Doutrinário</option><option>Devocional</option></select></div><div class="field"><label>Duração</label><select id="outlineTime"><option>25 minutos</option><option>30 minutos</option><option>35 minutos</option><option>40 minutos</option><option>45 minutos</option></select></div></div><div class="field"><label>Referência bíblica (opcional — identificada automaticamente em temas disponíveis)</label><input id="outlineBase" placeholder="Ex.: Marcos 2:1-12 (pode deixar vazio)"></div><div class="field"><label>Referências complementares (opcional)</label><input id="outlineRefs" placeholder="Ex.: Salmos 13; Romanos 8:28"></div><div class="field"><label>Público e objetivo (opcional)</label><input id="outlineAudience" placeholder="Ex.: Igreja; encorajar pessoas em tempos difíceis"></div><div id="aiStatus" class="muted" role="status" aria-live="polite">Verificando conexão com a IA...</div><div class="actions"><button id="generateBtn" class="btn" onclick="generateOutline()">Gerar esboço com IA</button></div><div class="field"><label>Esboço gerado — você pode editar antes de salvar</label><textarea id="outlineOutput" class="output hidden" style="min-height:580px" oninput="latestOutline=this.value"></textarea></div><div class="actions"><button class="btn secondary" onclick="saveGenerated()">Salvar na biblioteca</button><button class="btn secondary" onclick="printOutput('outlineOutput')">Imprimir / PDF</button></div></div></section>
+
+<section id="pesquisa" class="page hidden"><div class="hero"><div class="eyebrow">Investigação bíblica</div><h3>Pesquisa inteligente</h3><p>Pesquise uma referência e organize o estudo. A análise aprofundada por IA será ativada após configurar um provedor de IA.</p></div>
+<div class="card"><div class="field"><label>Referência bíblica</label><input id="searchRef" placeholder="Ex.: João 1:3"></div><div class="actions"><button class="btn" onclick="research()">Pesquisar referência</button></div><div id="researchOutput" class="output hidden"></div><div class="actions"><button class="btn secondary" onclick="saveResearch()">Salvar pesquisa na biblioteca</button><button class="btn secondary" onclick="printOutput('researchOutput')">Imprimir / PDF</button></div></div></section>
+
+<section id="biblioteca" class="page hidden"><div class="hero"><div class="eyebrow">Acervo pessoal</div><h3>Biblioteca</h3><p>Esboços e pesquisas que você decidiu guardar.</p></div><div class="card"><div id="libraryList" class="list"></div></div></section>
+<footer>Bispo Marcelo • Protótipo funcional inicial. O conteúdo bíblico integral e os recursos de IA dependem de integrações e licenças externas.</footer>
+</main></div>
+<script>
+const titles={inicio:"Bem-vindo ao Bispo Marcelo",biblia:"Bíblia",anotacoes:"Anotações",esbocos:"Esboços",pesquisa:"Pesquisa",biblioteca:"Biblioteca"};
+const get=(k)=>JSON.parse(localStorage.getItem("bm_"+k)||"[]");
+const put=(k,v)=>localStorage.setItem("bm_"+k,JSON.stringify(v));
+let latestOutline="",latestResearch="";
+function showTab(id){document.querySelectorAll(".page").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("active",x.dataset.tab===id));document.getElementById("pageTitle").textContent=titles[id];if(id==="anotacoes")renderNotes();if(id==="biblioteca")renderLibrary();}
+document.querySelectorAll(".nav").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+function openPassage(){let b=document.getElementById("book").value,c=document.getElementById("chapter").value,v=document.getElementById("verse").value;let sample=(b==="João"&&c==="1"&&(!v||v==="3"))?'<p class="scripture"><sup class="verse-num">3</sup>Todas as coisas foram feitas por intermédio dele, e, sem ele, nada do que foi feito se fez.</p><small class="gold">João 1:3 • Almeida Revista e Atualizada (exemplo)</small>':`<p class="muted">Passagem selecionada: ${b} ${c}${v?":"+v:""}. Para exibir o texto integral, conecte uma API ou base bíblica licenciada.</p>`;document.getElementById("passage").innerHTML=sample;}
+function clearNote(){["noteId","noteTitle","noteRef","noteBody"].forEach(id=>document.getElementById(id).value="");}
+function saveNote(){let title=document.getElementById("noteTitle").value.trim(),body=document.getElementById("noteBody").value.trim();if(!title||!body){alert("Preencha pelo menos o título e o conteúdo.");return}let arr=get("notes"),id=document.getElementById("noteId").value;let n={id:id||Date.now(),title,ref:document.getElementById("noteRef").value,body,updated:new Date().toLocaleString("pt-BR")};let i=arr.findIndex(x=>String(x.id)===String(n.id));if(i>=0)arr[i]=n;else arr.unshift(n);put("notes",arr);clearNote();renderNotes();}
+function renderNotes(){let el=document.getElementById("notesList"),arr=get("notes");el.innerHTML=arr.length?arr.map(n=>`<div class="item"><div><b>${esc(n.title)}</b><small>${esc(n.ref||"Sem referência")} • ${n.updated}</small></div><div class="actions"><button class="btn secondary" onclick="editNote('${n.id}')">Editar</button><button class="btn danger" onclick="deleteNote('${n.id}')">Excluir</button></div></div>`).join(""):'<div class="empty">Nenhuma anotação salva ainda.</div>';}
+function editNote(id){let n=get("notes").find(x=>String(x.id)===String(id));if(!n)return;noteId.value=n.id;noteTitle.value=n.title;noteRef.value=n.ref;noteBody.value=n.body;window.scrollTo({top:0,behavior:"smooth"});}
+function deleteNote(id){if(confirm("Excluir esta anotação?")){put("notes",get("notes").filter(n=>String(n.id)!==String(id)));renderNotes();}}
+function normalizeTheme(s){return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
+function paralyticOutline(t,base,type,time,refs,aud){
+ const minutes=parseInt(time,10),intro=Math.round(minutes*.16),context=Math.round(minutes*.12),closing=Math.round(minutes*.16),development=minutes-intro-context-closing;
+ const a=Math.floor(development/3),b=Math.floor(development/3),c=development-a-b;
+ const emphasis={"Evangelístico":"Enfatize a autoridade de Jesus para perdoar pecados e o convite à fé (vv. 5–12).","Expositivo":"Siga a sequência de Marcos 2:1–12, observando as ações, as palavras e a reação dos presentes.","Textual":"Construa cada ponto a partir dos movimentos narrativos dos versículos 1–5, 6–10 e 11–12.","Temático":"Explore fé, perdão e restauração, sem separar o tema da narrativa de Marcos.","Doutrinário":"Explique a autoridade de Jesus para perdoar pecados, sem concluir que toda enfermidade decorre de pecado pessoal.","Devocional":"Destaque confiança, perseverança, compaixão e uma resposta pessoal à palavra de Cristo."}[type]||"Siga o texto bíblico.";
+ return `ESBOÇO DE PREGAÇÃO — BISPO MARCELO
+
+TÍTULO: QUANDO JESUS ENTRA NA CASA, A HISTÓRIA MUDA
+TEMA INFORMADO: ${t}
+TEXTO BASE: ${base}
+PASSAGENS PARALELAS: Mateus 9:1–8; Lucas 5:17–26
+REFERÊNCIAS COMPLEMENTARES: ${refs||"Marcos 1:21–28; Marcos 2:13–17; Salmos 103:2–3"}
+ESTILO: ${type}
+DURAÇÃO: ${time}
+PÚBLICO / OBJETIVO: ${aud||"Comunidade cristã; apresentar a autoridade de Jesus e estimular uma resposta de fé"}
+
+IDEIA CENTRAL
+Jesus vê a fé manifestada na busca por ele, declara o perdão dos pecados e demonstra sua autoridade ao levantar o paralítico. O centro da narrativa não é apenas o milagre físico, mas a identidade e a autoridade de Jesus.
+
+ORIENTAÇÃO PARA O ESTILO ESCOLHIDO
+${emphasis}
+
+1. INTRODUÇÃO — ${intro} MINUTOS
+Imagine uma casa tão cheia que ninguém consegue entrar. Do lado de fora, um homem que não consegue caminhar depende da ajuda de outros. Seus amigos não desistem: abrem uma passagem pelo teto e o colocam diante de Jesus.
+Pergunta de abertura: o que acontece quando levamos nossas impossibilidades à presença de Cristo?
+Transição: Marcos apresenta uma cura extraordinária, mas o maior conflito da história começa quando Jesus pronuncia uma palavra inesperada: perdão.
+
+2. CONTEXTO BÍBLICO — ${context} MINUTOS
+• Marcos 2:1–12 situa a cena em Cafarnaum, onde Jesus está numa casa e anuncia a palavra (vv. 1–2).
+• A multidão impede a entrada. Quatro pessoas carregam o paralítico, removem parte da cobertura e descem o leito (vv. 3–4).
+• Jesus vê a fé deles e declara perdoados os pecados do homem (v. 5).
+• Alguns escribas questionam interiormente a declaração, pois reconhecem que o perdão dos pecados pertence a Deus (vv. 6–7).
+• Jesus conhece seus questionamentos e cura o homem como sinal de sua autoridade para perdoar pecados (vv. 8–12).
+Nota de interpretação: o texto não afirma que a paralisia daquele homem foi causada por um pecado específico; não faça essa associação.
+
+3. DESENVOLVIMENTO — ${development} MINUTOS
+
+I. UMA FÉ QUE SUPERA OS OBSTÁCULOS — ${a} MINUTOS
+Texto: Marcos 2:1–5
+A. A multidão era um obstáculo real, mas os quatro homens continuaram buscando acesso a Jesus.
+B. A fé aparece acompanhada de ação concreta: carregar, subir, abrir o teto e descer o amigo.
+C. Jesus percebe a fé demonstrada naquela atitude (v. 5).
+Aplicação: quem podemos ajudar a se aproximar de Jesus? Perseverança não é controlar Deus, mas continuar buscando-o com confiança.
+Frase para enfatizar: “A fé daqueles homens não ficou apenas na intenção; ela se transformou em atitude.”
+Transição: eles trouxeram o homem por causa de uma necessidade visível, mas Jesus começou tratando de uma questão mais profunda.
+
+II. JESUS TEM AUTORIDADE PARA PERDOAR — ${b} MINUTOS
+Texto: Marcos 2:5–10
+A. Antes de ordenar que o homem se levante, Jesus anuncia o perdão dos pecados (v. 5).
+B. Os escribas entendem o peso dessa declaração e questionam quem pode perdoar pecados senão Deus (vv. 6–7).
+C. Jesus responde ao questionamento e apresenta a cura visível como demonstração de sua autoridade (vv. 8–10).
+Aplicação: não reduzir Jesus a alguém que resolve problemas imediatos. A passagem nos chama a considerar quem ele é e o alcance de sua autoridade.
+Frase para enfatizar: “O milagre aponta para algo maior do que o próprio milagre: a autoridade de Jesus.”
+Transição: a autoridade anunciada em palavras é demonstrada diante de todos.
+
+III. A PALAVRA DE JESUS PRODUZ UMA RESPOSTA VISÍVEL — ${c} MINUTOS
+Texto: Marcos 2:10–12
+A. Jesus ordena ao homem: levantar-se, pegar o leito e ir para casa (v. 11; confira a redação na tradução escolhida).
+B. O homem se levanta e sai diante de todos (v. 12).
+C. Os presentes ficam admirados e glorificam a Deus (v. 12).
+Aplicação: a resposta apropriada à obra de Cristo envolve confiança, obediência e gratidão. O relato descreve um milagre específico; não é promessa de cura física imediata para todos.
+Frase para enfatizar: “A cena termina com um homem andando e uma multidão reconhecendo a ação de Deus.”
+
+4. CONCLUSÃO — ${Math.max(1,closing-2)} MINUTOS
+Retome os três movimentos do texto:
+1. Amigos que levam uma necessidade a Jesus.
+2. Jesus que revela sua autoridade para perdoar.
+3. Um homem que se levanta e uma multidão que glorifica a Deus.
+Síntese: a grande pergunta de Marcos 2 não é apenas “Jesus pode curar?”, mas “Quem é este que tem autoridade para perdoar pecados?”.
+
+5. APELO / REFLEXÃO — 2 MINUTOS
+Convide a igreja a examinar sua confiança em Cristo, a levar outras pessoas até ele por meio de atitudes concretas e a reconhecer sua autoridade. Ore por quem enfrenta limitações e sofrimento, sem atribuir culpa pessoal nem prometer uma cura que a passagem não garante para cada pessoa.
+Pergunta final: “Hoje, você está apenas esperando algo de Jesus ou também está disposto a reconhecer quem Jesus é?”
+
+ROTEIRO DE TEMPO
+Introdução ${intro} min | Contexto ${context} min | Ponto I ${a} min | Ponto II ${b} min | Ponto III ${c} min | Conclusão e apelo ${closing} min = ${minutes} min.
+
+CONFERÊNCIA BÍBLICA
+Leia Marcos 2:1–12 integralmente em uma tradução de sua escolha antes de pregar. Compare Mateus 9:1–8 e Lucas 5:17–26. Este conteúdo foi preparado previamente no aplicativo; não é uma análise dinâmica por IA.`;
+}
+function whenGodSpeaksOutline(t,base,type,time,refs,aud){
+ const minutes=parseInt(time,10), intro=Math.round(minutes*.15),context=Math.round(minutes*.13),end=Math.round(minutes*.17),dev=minutes-intro-context-end;
+ const p1=Math.floor(dev/3),p2=Math.floor(dev/3),p3=dev-p1-p2;
+ return `ESBOÇO COMPLETO — BISPO MARCELO
+
+TÍTULO: QUANDO DEUS FALA, AS TREVAS NÃO TÊM A ÚLTIMA PALAVRA
+TEMA: ${t}
+TEXTO BASE: ${base}
+TEXTOS DE APOIO: Salmos 33:6–9; Isaías 55:10–11; Hebreus 1:1–2; Tiago 1:22
+REFERÊNCIAS INDICADAS PELO USUÁRIO: ${refs||"Nenhuma"}
+ESTILO: ${type} | DURAÇÃO: ${time}
+PÚBLICO E OBJETIVO: ${aud||"Igreja em geral; incentivar a ouvir a Palavra de Deus e responder com fé e obediência"}
+
+PROPOSIÇÃO
+A palavra de Deus não é um ruído entre tantos: na criação, ela estabelece a luz; na história da salvação, revela sua vontade; e, diante de nós, exige escuta e resposta. O texto de Gênesis não promete que toda dificuldade desaparecerá ao ouvirmos uma mensagem; ele revela o Deus que fala com autoridade.
+
+INTRODUÇÃO — ${intro} MINUTOS
+Há momentos em que o silêncio parece dominar: não sabemos que direção tomar, a situação parece confusa e as palavras humanas não bastam. A Bíblia começa apresentando um cenário sem forma, vazio e em trevas. A mudança não começa com uma iniciativa humana, mas com a palavra de Deus: ele ordena que haja luz.
+Pergunta para a igreja: estamos dispostos a ouvir a voz de Deus nas Escrituras mesmo quando ela confronta nossas expectativas?
+Transição: antes de perguntar o que Deus pode fazer por nós, precisamos contemplar quem ele é e o que sua palavra revela.
+
+CONTEXTO E LEITURA — ${context} MINUTOS
+Leia Gênesis 1:1–5 na tradução bíblica utilizada pela igreja. Gênesis 1 apresenta Deus como Criador. O versículo 2 descreve a terra sem forma e vazia, com trevas sobre a face do abismo; no versículo 3, Deus fala e a luz passa a existir. A narrativa prossegue com a distinção entre luz e trevas e a avaliação da criação como boa.
+Cuidado exegético: Gênesis 1 trata primeiramente da criação; aplicar as trevas à vida emocional é uma analogia pastoral, não o sentido literal original do versículo.
+
+PONTO 1 — A PALAVRA DE DEUS REVELA SUA AUTORIDADE — ${p1} MINUTOS
+TEXTO: Gênesis 1:1–3; Salmos 33:6–9
+EXPLICAÇÃO: O relato não apresenta Deus negociando com as trevas. A luz surge porque Deus fala. A ênfase está na autoridade do Criador e na dependência da criação em relação a ele. O Salmo 33 retoma essa verdade ao convidar a terra a reverenciar o Senhor.
+DESENVOLVIMENTO: A voz humana pode aconselhar e persuadir; a palavra criadora de Deus é de outra ordem. Ele não depende de recursos externos para ser Deus. Isso produz reverência antes de produzir expectativas sobre nossos resultados.
+APLICAÇÃO: Diante da incerteza, a primeira atitude do cristão não é inventar certezas, mas voltar-se para aquilo que Deus efetivamente revelou. Onde estamos tratando nossa opinião como se tivesse a autoridade das Escrituras?
+FRASE-CHAVE: “A primeira luz de Gênesis não nasce do esforço humano; nasce da palavra do Criador.”
+TRANSIÇÃO: Se Deus fala com autoridade, sua palavra não pode ser tratada como algo vazio.
+
+PONTO 2 — A PALAVRA DE DEUS CUMPRE SEU PROPÓSITO — ${p2} MINUTOS
+TEXTO: Isaías 55:10–11
+EXPLICAÇÃO: Isaías compara a palavra que procede de Deus à chuva que rega a terra. A imagem ressalta que Deus realiza aquilo para o qual envia sua palavra. O contexto de Isaías 55 inclui o convite a buscar o Senhor e acolher sua misericórdia.
+DESENVOLVIMENTO: Nem sempre o propósito de Deus corresponde ao nosso cronograma ou ao resultado que desejamos. A fidelidade da palavra divina não autoriza prometer prosperidade, cura ou respostas imediatas a toda pessoa.
+APLICAÇÃO: Aprender a confiar no caráter de Deus mesmo quando ainda não enxergamos todos os desdobramentos. Sua Palavra nos chama ao arrependimento, à esperança e à perseverança.
+FRASE-CHAVE: “A Palavra de Deus é fiel ao propósito de Deus, não aos atalhos que nós inventamos.”
+TRANSIÇÃO: Mas ouvir que Deus fala não basta: como devemos responder?
+
+PONTO 3 — QUEM OUVE A PALAVRA É CHAMADO A RESPONDER — ${p3} MINUTOS
+TEXTO: Hebreus 1:1–2; Tiago 1:22
+EXPLICAÇÃO: Hebreus afirma que Deus falou de diversas maneiras e que, nestes últimos dias, falou por meio do Filho. Tiago adverte contra a atitude de apenas ouvir a palavra sem praticá-la. A revelação de Deus conduz a uma resposta concreta.
+DESENVOLVIMENTO: Na fé cristã, ouvir a Deus não significa buscar mensagens secretas em cada acontecimento. Significa dar atenção às Escrituras e a Jesus Cristo, a quem elas testemunham. A obediência não compra o favor de Deus; é resposta à sua graça.
+APLICAÇÃO: Se a Palavra nos chama a perdoar, devemos enfrentar a resistência ao perdão; se nos chama à justiça, não podemos continuar indiferentes; se nos chama a confiar em Cristo, precisamos abandonar a autossuficiência.
+FRASE-CHAVE: “Não basta admirar a voz de Deus; é preciso levar a sério o que ele diz.”
+
+CONCLUSÃO — ${Math.max(1,end-2)} MINUTOS
+Retome o caminho percorrido: em Gênesis, Deus fala com autoridade; em Isaías, sua palavra cumpre seus propósitos; em Hebreus e Tiago, somos chamados a ouvir o Filho e praticar a palavra recebida. O Deus que criou a luz não é uma ferramenta para realizar todos os nossos desejos: é o Senhor digno de fé, reverência e obediência.
+
+APELO E ORAÇÃO — 2 MINUTOS
+Convide a comunidade a examinar se tem buscado a vontade de Deus nas Escrituras ou apenas uma confirmação de seus próprios planos. Chame os ouvintes a confiar em Jesus Cristo, a ouvir seu ensino e a dar um passo concreto de obediência nesta semana.
+ORAÇÃO SUGERIDA: “Senhor, dá-nos ouvidos atentos à tua Palavra, discernimento para compreendê-la e coragem para obedecer. Que não confundamos nossos desejos com tua voz. Conduze-nos a Cristo. Amém.”
+
+DISTRIBUIÇÃO DO TEMPO
+Introdução ${intro} min; contexto ${context} min; ponto 1 ${p1} min; ponto 2 ${p2} min; ponto 3 ${p3} min; conclusão e apelo ${end} min. TOTAL: ${minutes} min.
+
+NOTA DE PREPARAÇÃO
+Leia cada passagem integralmente e confira o contexto em uma tradução de sua preferência. Este esboço é conteúdo local preparado para o tema “Quando Deus fala”, não uma geração livre por IA.`;
+}
+async function generateOutline(){
+ const t=outlineTopic.value.trim();
+ if(!t){alert("Digite um tema ou acontecimento bíblico.");return;}
+ const btn=document.getElementById('generateBtn'),status=document.getElementById('aiStatus');
+ btn.disabled=true;btn.textContent='Preparando pregação...';status.textContent='A IA está desenvolvendo seu esboço. Isso pode levar alguns segundos.';
+ try{
+  const r=await fetch('/api/generate-outline',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:t,base:outlineBase.value,style:outlineType.value,duration:outlineTime.value,refs:outlineRefs.value,audience:outlineAudience.value})});
+  const data=await r.json();if(!r.ok)throw new Error(data.error||'Não foi possível gerar o esboço.');
+  latestOutline=data.text;outlineOutput.value=latestOutline;outlineOutput.classList.remove('hidden');status.textContent='Esboço gerado com IA. Confira as referências bíblicas antes de pregar.';
+ }catch(e){status.textContent='Erro: '+e.message;alert(e.message)}
+ finally{btn.disabled=false;btn.textContent='Gerar esboço com IA';}
+}
+async function checkAI(){const el=document.getElementById('aiStatus');try{const r=await fetch('/api/status');const d=await r.json();el.textContent=d.ready?'IA conectada ao servidor. Você pode gerar qualquer tema.':'IA ainda não configurada: adicione OPENAI_API_KEY no servidor.';}catch{el.textContent='Abra o aplicativo pelo endereço do servidor (não diretamente pelo arquivo HTML).';}}
+checkAI();
+async function research(){
+ const ref=searchRef.value.trim();if(!ref){alert('Digite uma referência bíblica.');return;}
+ const out=document.getElementById('researchOutput');out.textContent='Preparando pesquisa bíblica com IA...';out.classList.remove('hidden');
+ try{const r=await fetch('/api/research',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reference:ref})});const d=await r.json();if(!r.ok)throw new Error(d.error||'Erro na pesquisa');latestResearch=d.text;out.textContent=latestResearch;}
+ catch(e){out.textContent='Não foi possível concluir a pesquisa: '+e.message;}
+}
+function saveGenerated(){latestOutline=outlineOutput.value;if(!latestOutline){alert("Gere um esboço primeiro.");return}let a=get("library");a.unshift({id:Date.now(),type:"Esboço",title:document.getElementById("outlineTopic").value,body:latestOutline,date:new Date().toLocaleString("pt-BR")});put("library",a);alert("Esboço salvo na biblioteca.");}
+function saveResearch(){if(!latestResearch){alert("Faça uma pesquisa primeiro.");return}let a=get("library");a.unshift({id:Date.now(),type:"Pesquisa",title:document.getElementById("searchRef").value,body:latestResearch,date:new Date().toLocaleString("pt-BR")});put("library",a);alert("Pesquisa salva na biblioteca.");}
+function renderLibrary(){let a=get("library"),el=document.getElementById("libraryList");el.innerHTML=a.length?a.map(x=>`<div class="item"><div><b>${esc(x.title)}</b><small>${x.type} • ${x.date}</small></div><div class="actions"><button class="btn secondary" onclick="viewLibrary('${x.id}')">Abrir</button><button class="btn danger" onclick="removeLibrary('${x.id}')">Excluir</button></div></div>`).join(""):'<div class="empty">Sua biblioteca está vazia.</div>';}
+function viewLibrary(id){let x=get("library").find(i=>String(i.id)===String(id));if(x){let w=window.open("","_blank");w.document.write("<pre style='white-space:pre-wrap;font:16px/1.6 Georgia;padding:30px'>"+esc(x.body)+"</pre>");}}
+function removeLibrary(id){put("library",get("library").filter(x=>String(x.id)!==String(id)));renderLibrary();}
+function printOutput(id){let s=document.getElementById(id);if(!s||s.classList.contains("hidden"))return;let w=window.open("","_blank");w.document.write("<html><meta charset='utf-8'><title>Bispo Marcelo</title><body style='font:16px/1.6 Georgia;padding:40px;white-space:pre-wrap'>"+esc(s.value!==undefined?s.value:s.textContent)+"</body></html>");w.document.close();w.print();}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+renderNotes();
+</script></body></html>
